@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitchell Landers</title>
+<meta name="description" content="Mitchell Landers — behavioral scientist studying social emotions, status, and measurement. Postdoctoral researcher, UC San Diego.">
+<meta property="og:title" content="Mitchell Landers">
+<meta property="og:description" content="Behavioral scientist studying social emotions, status, and measurement.">
+<meta property="og:image" content="files/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,50&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F5F7;
+    --panel:#FFFFFF;
+    --ink:#1A2327;
+    --muted:#5B686D;
+    --line:#D8DFE3;
+    --deep:#15343E;        /* hero band */
+    --deep-2:#1E4B57;
+    --on-deep:#EAF1F2;
+    --on-deep-muted:#A9C2C6;
+    --accent:#1E6B7B;      /* links */
+    --amber:#C98B1F;       /* year numerals, highlights */
+    --amber-soft:#F6EBD2;
+    /* topic hues */
+    --t-envy:#2E7D5B;    --t-envy-soft:#DDEFE6;
+    --t-shame:#6A4C9C;   --t-shame-soft:#E7E0F3;
+    --t-anger:#B4452F;   --t-anger-soft:#F5E0DA;
+    --t-forgive:#2F6DB5; --t-forgive-soft:#DCE8F6;
+    --t-status:#B8860B;  --t-status-soft:#F5EBD0;
+    --t-methods:#4F6D7A; --t-methods-soft:#E0E8EC;
+    --display:"Fraunces", Georgia, serif;
+    --body:"IBM Plex Sans", system-ui, sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+    --measure:64ch;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s,color .15s}
+  a:hover{border-bottom-color:currentColor}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+  h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.01em}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .brand{font-family:var(--display);font-size:19px;color:var(--ink);white-space:nowrap}
+  nav .brand .short{display:none}
+  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:22px}
+  nav li a{color:var(--muted);font-size:14px;font-weight:500;letter-spacing:.02em}
+  nav li a:hover{color:var(--deep);border-bottom-color:var(--amber)}
+
+  /* hero band */
+  .band{background:linear-gradient(160deg,var(--deep) 0%,var(--deep-2) 100%);color:var(--on-deep);position:relative;overflow:hidden}
+  .band::after{content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+  .band::before{content:"";position:absolute;right:40px;top:-60px;width:260px;height:260px;border-radius:50%;border:1px solid rgba(255,255,255,.08);pointer-events:none}
+  .hero{padding:72px 0 64px;display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;position:relative}
+  .avatar{width:220px;height:220px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 4px rgba(255,255,255,.14),0 18px 40px rgba(0,0,0,.25)}
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero h1{font-size:clamp(40px,5.2vw,58px);line-height:1.02;font-variation-settings:"SOFT" 50;margin-bottom:12px;color:#fff}
+  .role{font-size:19px;margin:0 0 2px;color:var(--on-deep)}
+  .affil{font-size:16px;color:var(--on-deep-muted);margin:0 0 24px}
+  .affil a{color:var(--on-deep-muted)}
+  .affil a:hover{color:#fff}
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+  .links a{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-size:14px;font-weight:500}
+  .links a:hover{background:var(--amber);border-color:var(--amber);color:var(--deep)}
+  .links svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  /* sections */
+  section{padding:60px 0;border-top:1px solid var(--line)}
+  section:first-of-type{border-top:0}
+  .section-grid{display:grid;grid-template-columns:200px 1fr;gap:48px}
+  .section-grid h2{font-size:13px;font-family:var(--mono);font-weight:500;color:var(--deep);letter-spacing:.1em;text-transform:uppercase;padding-top:8px;position:sticky;top:76px;align-self:start}
+  .section-grid h2::before{content:"";display:block;width:28px;height:3px;background:var(--amber);margin-bottom:12px;border-radius:2px}
+  .prose{max-width:var(--measure)}
+  .prose p{margin:0 0 18px}
+  .prose p:last-child{margin-bottom:0}
+  .lede{font-family:var(--display);font-size:27px;line-height:1.32;font-variation-settings:"SOFT" 50;margin-bottom:24px!important;color:var(--deep)}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+  .two-col h3{font-size:13px;font-family:var(--body);font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .interests{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+  .interests li{padding:5px 12px;border-radius:6px;font-size:15px;font-weight:500;border:1px solid transparent}
+  .interests li[data-t="envy"]{background:var(--t-envy-soft);color:var(--t-envy)}
+  .interests li[data-t="status"]{background:var(--t-status-soft);color:#8A6508}
+  .interests li[data-t="forgive"]{background:var(--t-forgive-soft);color:var(--t-forgive)}
+  .interests li[data-t="shame"]{background:var(--t-shame-soft);color:var(--t-shame)}
+  .interests li[data-t="methods"]{background:var(--t-methods-soft);color:var(--t-methods)}
+  .interests li[data-t="anger"]{background:var(--t-anger-soft);color:var(--t-anger)}
+  .edu{list-style:none;margin:0;padding:0}
+  .edu li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:14px}
+  .edu li:last-child{border-bottom:0}
+  .edu .yr{font-family:var(--mono);font-size:14px;color:var(--amber);padding-top:3px;font-weight:500}
+  .edu .deg{font-weight:500}
+  .edu .inst{color:var(--muted);font-size:15px}
+
+  /* publications */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+  .filters button{font:500 13px/1 var(--body);letter-spacing:.02em;padding:8px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer;transition:all .15s;--c:var(--deep);--s:#E4E9EC}
+  .filters button[data-filter="envy"]{--c:var(--t-envy);--s:var(--t-envy-soft)}
+  .filters button[data-filter="shame"]{--c:var(--t-shame);--s:var(--t-shame-soft)}
+  .filters button[data-filter="anger"]{--c:var(--t-anger);--s:var(--t-anger-soft)}
+  .filters button[data-filter="forgiveness"]{--c:var(--t-forgive);--s:var(--t-forgive-soft)}
+  .filters button[data-filter="status"]{--c:var(--t-status);--s:var(--t-status-soft)}
+  .filters button[data-filter="methods"]{--c:var(--t-methods);--s:var(--t-methods-soft)}
+  .filters button:hover{border-color:var(--c);color:var(--c);background:var(--s)}
+  .filters button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+  .pubgroup{margin-bottom:36px}
+  .pubgroup h3{font-family:var(--display);font-size:36px;font-weight:300;color:var(--amber);line-height:1;margin-bottom:14px;font-variation-settings:"SOFT" 50}
+  .pub{padding:15px 0 15px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr;gap:4px;position:relative}
+  .pub::before{content:"";position:absolute;left:0;top:15px;bottom:15px;width:3px;border-radius:2px;background:var(--line)}
+  .pub[data-c="envy"]::before{background:var(--t-envy)}
+  .pub[data-c="shame"]::before{background:var(--t-shame)}
+  .pub[data-c="anger"]::before{background:var(--t-anger)}
+  .pub[data-c="forgiveness"]::before{background:var(--t-forgive)}
+  .pub[data-c="status"]::before{background:var(--t-status)}
+  .pub[data-c="methods"]::before{background:var(--t-methods)}
+  .pub:last-child{border-bottom:1px solid var(--line)}
+  .pub.hidden{display:none}
+  .pub .title{font-weight:500;font-size:17px;line-height:1.4}
+  .pub .title a{color:var(--ink)}
+  .pub .title a:hover{color:var(--accent)}
+  .pub .authors{color:var(--muted);font-size:15px}
+  .pub .authors b{color:var(--ink);font-weight:500}
+  .pub .venue{font-size:15px;color:var(--muted)}
+  .pub .venue i{color:var(--ink)}
+  .pub .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center}
+  .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;padding:3px 8px;border-radius:4px;background:var(--t-methods-soft);color:var(--t-methods)}
+  .tag[data-t="envy"]{background:var(--t-envy-soft);color:var(--t-envy)}
+  .tag[data-t="shame"]{background:var(--t-shame-soft);color:var(--t-shame)}
+  .tag[data-t="anger"]{background:var(--t-anger-soft);color:var(--t-anger)}
+  .tag[data-t="forgive"]{background:var(--t-forgive-soft);color:var(--t-forgive)}
+  .tag[data-t="status"]{background:var(--t-status-soft);color:#8A6508}
+  .tag.status{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+  .pub .meta a{font-size:13px;font-weight:500;margin-left:auto}
+  .empty{color:var(--muted);font-style:italic;display:none}
+
+  /* projects */
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px 24px;border-top:4px solid var(--t-methods)}
+  .card[data-c="status"]{border-top-color:var(--t-status)}
+  .card[data-c="amber"]{border-top-color:var(--amber)}
+  .card[data-c="deep"]{border-top-color:var(--deep)}
+  .card h3{font-family:var(--body);font-size:16px;font-weight:600;margin-bottom:6px}
+  .card p{margin:0;font-size:15px;color:var(--muted)}
+  .card .tag{margin-bottom:10px;display:inline-block}
+
+  footer{background:var(--deep);color:var(--on-deep-muted);font-size:14px;padding:32px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media (max-width:760px){
+    body{font-size:16px}
+    nav ul{gap:14px}
+    nav .brand .full{display:none}
+    nav .brand .short{display:inline}
+    .hero{grid-template-columns:1fr;gap:24px;padding:44px 0 40px}
+    .avatar{width:150px;height:150px}
+    .section-grid{grid-template-columns:1fr;gap:16px}
+    .section-grid h2{position:static}
+    .two-col,.projects{grid-template-columns:1fr;gap:28px}
+    .lede{font-size:22px}
+    section{padding:40px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="full">Mitchell Landers</span><span class="short">ML</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="files/cv.pdf">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="band" id="top">
+  <header class="hero wrap">
+    <div class="avatar"><img src="files/avatar.jpg" alt="Mitchell Landers"></div>
+    <div>
+      <h1>Mitchell Landers</h1>
+      <p class="role">Postdoctoral Researcher in Psychology</p>
+      <p class="affil"><a href="https://psychology.ucsd.edu/">University of California, San Diego</a></p>
+      <ul class="links">
+        <li><a href="mailto:m1landers@ucsd.edu"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=NeyqJzUAAAAJ" rel="me"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>Google Scholar</a></li>
+        <li><a href="https://github.com/msblanders" rel="me"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6 0C6.8 2.8 5.8 3.1 5.8 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/mitchell-landers-4251733a/" rel="me"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>LinkedIn</a></li>
+        <li><a href="https://osf.io/unzg7/" rel="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>OSF</a></li>
+        <li><a href="https://www.researchgate.net/profile/Mitchell-Landers" rel="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16V8h4a2 2 0 0 1 0 4h-4M12 12l3 4"/></svg>ResearchGate</a></li>
+        <li><a href="files/cv.pdf"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg>CV</a></li>
+      </ul>
+    </div>
+  </header>
+</div>
+
+<main class="wrap">
+
+  <section id="about">
+    <div class="section-grid">
+      <h2>About</h2>
+      <div>
+        <div class="prose">
+          <p class="lede">I study the social emotions — envy, shame, anger and hatred, forgiveness — as evolved systems for managing status, reputation, and coalitions, and I work on how to measure them well.</p>
+          <p>I'm a postdoctoral researcher in the Department of Psychology at UC San Diego, where I work with Christine Harris and Michael McCullough on a multi-year program of research on envy. I completed my PhD at the University of Chicago with Alex Shaw, and before that studied evolutionary psychology with Leda Cosmides and John Tooby at UC Santa Barbara.</p>
+          <p>My approach is functionalist: ask what problem an emotion evolved to solve, derive what its triggers and outputs should look like if that's right, and test those predictions with experiments and cross-cultural data. Envy is the running example. It is usually modeled as a two-person game between the envier and a more successful rival. My work adds the implicit third party: the audience whose respect the rival threatens to capture. When personal desire, similarity, and audience evaluations are manipulated independently, only audience evaluations reliably produce malicious envy — people begrudge others for outshining them in others' eyes, not for having what they themselves want. A companion method, the third-party criterion, separates variables that moderate envy specifically from variables that simply make anyone resent a successful person.</p>
+          <p>The same approach runs through collaborative work on shame and guilt (with Daniel Sznycer and Patrick Durkee), anger and hatred (with Aaron Sell and colleagues), and third-party forgiveness (with Juliana Schroeder and Alex Shaw). Alongside the experiments I build measurement tools, most recently the Fear of Being Envied Scale, and agent-based models in which status is treated as a prediction about who will side with whom.</p>
+          <p>Increasingly I apply the same toolkit to the evaluation of language models, treating benchmark design as a psychometric problem. I'm also an Associate Editor at <em>Open Inquiry in Mental Health</em> (Open Therapy Institute).</p>
+        </div>
+        <div class="two-col">
+          <div>
+            <h3>Interests</h3>
+            <ul class="interests">
+              <li data-t="envy">Envy &amp; social emotions</li>
+              <li data-t="status">Status &amp; coalitions</li>
+              <li data-t="forgive">Morality &amp; forgiveness</li>
+              <li data-t="shame">Cross-cultural emotion</li>
+              <li data-t="methods">Psychometrics</li>
+              <li data-t="anger">Conflict &amp; bargaining</li>
+              <li data-t="methods">LLM evaluation</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Education</h3>
+            <ul class="edu">
+              <li><span class="yr">2024</span><div><div class="deg">PhD in Psychology</div><div class="inst">University of Chicago</div></div></li>
+              <li><span class="yr">2024</span><div><div class="deg">MA in Psychology</div><div class="inst">University of Chicago</div></div></li>
+              <li><span class="yr">2017</span><div><div class="deg">BA in Philosophy</div><div class="inst">University of California, Berkeley</div></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-grid">
+      <h2>Publications</h2>
+      <div>
+        <div class="filters" role="group" aria-label="Filter publications by topic">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="envy" aria-pressed="false">Envy</button>
+          <button type="button" data-filter="shame" aria-pressed="false">Shame &amp; guilt</button>
+          <button type="button" data-filter="anger" aria-pressed="false">Anger &amp; hatred</button>
+          <button type="button" data-filter="forgiveness" aria-pressed="false">Forgiveness</button>
+          <button type="button" data-filter="status" aria-pressed="false">Status</button>
+          <button type="button" data-filter="methods" aria-pressed="false">Methods</button>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>2026</h3>
+          <article class="pub" data-tags="envy methods" data-c="envy">
+            <div class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/40892566/">Green-eyed monster or green-eyed mirage? A new procedure for telling when begrudging others' success is or is not envy</a></div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Shaw, A.</div>
+            <div class="venue"><i>Emotion</i>, 26(2), 433–449</div>
+            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag">methods</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4770388">Preprint →</a></div>
+          </article>
+          <article class="pub" data-tags="forgiveness" data-c="forgiveness">
+            <div class="title">Standing on principle: Moral reasons can excuse disloyalty to friends</div>
+            <div class="authors"><b>Landers, M.</b>, DeScioli, P., Mackiel, A., &amp; Shaw, A.</div>
+            <div class="venue"><i>Evolution and Human Behavior</i>, 47(4), 106883</div>
+            <div class="meta"><span class="tag" data-t="forgive">forgiveness</span><span class="tag" data-t="forgive">morality</span></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>2025</h3>
+          <article class="pub" data-tags="anger" data-c="anger">
+            <div class="title"><a href="https://doi.org/10.1016/j.evolhumbehav.2025.106776">The evolutionary logic of anger and hatred: An empirical test</a></div>
+            <div class="authors"><b>Landers, M.</b>, Sell, A., Scrivner, C., &amp; Lopez, A.</div>
+            <div class="venue"><i>Evolution and Human Behavior</i>, 46(6), 106776</div>
+            <div class="meta"><span class="tag" data-t="anger">anger &amp; hatred</span><a href="https://www.psypost.org/new-psychology-research-shows-that-hatred-is-not-just-intense-anger/">Coverage in PsyPost →</a></div>
+          </article>
+          <article class="pub" data-tags="shame" data-c="shame">
+            <div class="title">Cross-cultural regularities and variability in the emotion of shame</div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="venue">In U. Hess, S. Hareli, &amp; K. Kafetsios (Eds.), <i>Research Handbook on Culture and Emotion</i>. Edward Elgar.</div>
+            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>2024</h3>
+          <article class="pub" data-tags="shame" data-c="shame">
+            <div class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/38252113/">Are self-conscious emotions about the self? Testing competing theories of shame and guilt across two disparate cultures</a></div>
+            <div class="authors"><b>Landers, M.</b>*, Sznycer, D.*, &amp; Durkee, P. K. &nbsp;<span style="color:var(--muted)">*joint first authors</span></div>
+            <div class="venue"><i>Emotion</i>, 24(5), 1157–1168</div>
+            <div class="meta"><span class="tag" data-t="shame">shame &amp; guilt</span></div>
+          </article>
+          <article class="pub" data-tags="shame" data-c="shame">
+            <div class="title"><a href="https://psyarxiv.com/nh2yj/">Shame</a></div>
+            <div class="authors"><b>Landers, M.</b>, Sznycer, D., &amp; Al-Shawaf, L.</div>
+            <div class="venue">In L. Al-Shawaf &amp; T. K. Shackelford (Eds.), <i>The Oxford Handbook of Evolution and the Emotions</i> (pp. 145–162). Oxford University Press.</div>
+            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span><a href="https://psyarxiv.com/nh2yj/">Preprint →</a></div>
+          </article>
+          <article class="pub" data-tags="anger" data-c="anger">
+            <div class="title"><a href="https://psyarxiv.com/kxdvu/">The neutralization theory of hatred</a></div>
+            <div class="authors">Sell, A., Scrivner, C., <b>Landers, M.</b>, &amp; Lopez, A.</div>
+            <div class="venue">In L. Al-Shawaf &amp; T. K. Shackelford (Eds.), <i>The Oxford Handbook of Evolution and the Emotions</i> (pp. 163–180). Oxford University Press.</div>
+            <div class="meta"><span class="tag" data-t="anger">anger &amp; hatred</span><span class="tag status">chapter</span><a href="https://psyarxiv.com/kxdvu/">Preprint →</a></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>2023</h3>
+          <article class="pub" data-tags="methods" data-c="methods">
+            <div class="title">Cortisol reactivity to psychosocial stress in vulnerable and grandiose narcissists: An exploratory study</div>
+            <div class="authors">Borráz-León, J. I., Spreitzer, A., Scrivner, C., <b>Landers, M.</b>, Lee, R., &amp; Maestripieri, D.</div>
+            <div class="venue"><i>Frontiers in Psychology</i>, 13, 1067456</div>
+            <div class="meta"><span class="tag">personality</span></div>
+          </article>
+          <article class="pub" data-tags="status" data-c="status">
+            <div class="title"><a href="https://doi.org/10.1332/204378921X16448923157590">When making policy, knowledge of human nature must be supplemented with sound economic analysis: A reply to Johnson and Nettle</a></div>
+            <div class="authors">Sznycer, D., &amp; <b>Landers, M.</b></div>
+            <div class="venue"><i>Global Discourse</i>, 13(2), 225–228</div>
+            <div class="meta"><span class="tag" data-t="status">policy</span></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>2022</h3>
+          <article class="pub" data-tags="shame status" data-c="shame">
+            <div class="title"><a href="https://doi.org/10.1017/ehs.2022.43">The evolution of shame and its display</a></div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="venue"><i>Evolutionary Human Sciences</i>, 4, e45</div>
+            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag" data-t="status">status</span></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>Under review &amp; in preparation</h3>
+          <article class="pub" data-tags="envy methods" data-c="envy">
+            <div class="title">How FOBE-ic are you? Development and initial validation of the Fear of Being Envied Scale</div>
+            <div class="authors"><b>Landers, M.</b>, Harris, C. R., &amp; McCullough, M. E.</div>
+            <div class="venue">Under review</div>
+            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag">psychometrics</span><span class="tag status">under review</span></div>
+          </article>
+          <article class="pub" data-tags="forgiveness" data-c="forgiveness">
+            <div class="title">Divine or debased? When and why third-party forgiveness seems immoral</div>
+            <div class="authors"><b>Landers, M.</b>, Schroeder, J., &amp; Shaw, A.</div>
+            <div class="venue">Under review</div>
+            <div class="meta"><span class="tag" data-t="forgive">forgiveness</span><span class="tag status">under review</span></div>
+          </article>
+          <article class="pub" data-tags="envy" data-c="envy">
+            <div class="title">Begrudging what others value, not what I lack: Malicious envy is driven by differential audience evaluations, not personal desire</div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Shaw, A.</div>
+            <div class="venue">In preparation</div>
+            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag status">in prep</span></div>
+          </article>
+          <article class="pub" data-tags="envy status" data-c="envy">
+            <div class="title">A competitive-valuation theory of envy <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="venue">In preparation</div>
+            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag" data-t="status">status</span><span class="tag status">in prep</span></div>
+          </article>
+          <article class="pub" data-tags="status methods" data-c="status">
+            <div class="title">Human status tracking as coalition prediction <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
+            <div class="authors"><b>Landers, M.</b>, Sznycer, D., &amp; Lu, J.</div>
+            <div class="venue">In preparation</div>
+            <div class="meta"><span class="tag" data-t="status">status</span><span class="tag">modeling</span><span class="tag status">in prep</span></div>
+          </article>
+        </div>
+        <p class="empty" id="empty">Nothing in this category yet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-grid">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="card" data-c="deep">
+          <span class="tag">in development</span>
+          <h3>WTR-Bench</h3>
+          <p>A psychometric benchmark for welfare-tradeoff consistency in language-model agents: a validated item bank, an adaptive titration sampler, and variance decomposition across prompt perturbations, so that a model's score comes with an honest confidence interval.</p>
+        </div>
+        <div class="card" data-c="amber">
+          <span class="tag">measurement</span>
+          <h3>Detecting AI-generated prose</h3>
+          <p>A controlled program measuring which features of prose drive AI-text detector classifications, against a documented baseline of human writing. A validity study of detectors from the measurement side, including false-positive risk for particular human styles.</p>
+        </div>
+        <div class="card" data-c="status">
+          <span class="tag" data-t="status">simulation</span>
+          <h3>Status and coalition dynamics</h3>
+          <p>Agent-based models in which status is treated as a prediction about who will side with whom, with model predictions tested against real-world interstate-conflict data.</p>
+        </div>
+        <div class="card">
+          <span class="tag">editorial</span>
+          <h3>Open Inquiry in Mental Health</h3>
+          <p>Associate Editor at the Open Therapy Institute's journal: peer-review management, manuscript handling, and production.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mitchell Landers</span>
+    <span>San Diego, California</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.filters button');
+    var pubs = document.querySelectorAll('.pub');
+    var groups = document.querySelectorAll('[data-group]');
+    var empty = document.getElementById('empty');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var f = btn.getAttribute('data-filter');
+        buttons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        var shown = 0;
+        pubs.forEach(function(p){
+          var hit = f === 'all' || (p.getAttribute('data-tags') || '').split(' ').indexOf(f) !== -1;
+          p.classList.toggle('hidden', !hit);
+          if (hit) shown++;
+        });
+        groups.forEach(function(g){
+          g.style.display = g.querySelectorAll('.pub:not(.hidden)').length ? '' : 'none';
+        });
+        empty.style.display = shown ? 'none' : 'block';
+      });
+    });
+  })();
+</script>
+</body>
+</html>
