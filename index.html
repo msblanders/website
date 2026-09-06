@@ -7,7 +7,11 @@
 <meta name="description" content="Mitchell Landers, PhD — behavioral scientist studying social emotions, moral judgment, and measurement. PhD, University of Chicago.">
 <meta property="og:title" content="Mitchell Landers">
 <meta property="og:description" content="Behavioral scientist studying social emotions, moral judgment, and measurement.">
-<meta property="og:image" content="files/avatar.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://msblanders.github.io/website/">
+<meta property="og:image" content="https://msblanders.github.io/website/files/avatar.jpg">
+<meta property="og:image:alt" content="Portrait of Mitchell Landers">
+<link rel="canonical" href="https://msblanders.github.io/website/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,50&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -46,6 +50,10 @@
   a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
   h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.01em}
   .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  .skip-link{position:absolute;top:-80px;left:16px;z-index:20;background:var(--panel);padding:10px 16px}
+  .skip-link:focus{top:8px}
+  section,[id="top"],main{scroll-margin-top:76px}
+  .section-grid > *{min-width:0}
 
   /* nav */
   nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
@@ -150,6 +158,7 @@
   .card[data-c="deep"]{border-top-color:var(--deep)}
   .card h3{font-family:var(--body);font-size:16px;font-weight:600;margin-bottom:6px}
   .card p{margin:0;font-size:15px;color:var(--muted)}
+  .card p + p{margin-top:12px}
   .card .tag{margin-bottom:10px;display:inline-block}
 
   footer{background:var(--deep);color:var(--on-deep-muted);font-size:14px;padding:32px 0}
@@ -168,11 +177,16 @@
     .lede{font-size:22px}
     section{padding:40px 0}
   }
+  @media (max-width:360px){
+    nav ul{gap:10px}
+    nav li a{font-size:13px}
+  }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="wrap">
     <a class="brand" href="#top"><span class="full">Mitchell Landers</span><span class="short">ML</span></a>
     <ul>
@@ -192,19 +206,19 @@
       <p class="role">Behavioral Scientist &middot; Psychometrics &amp; LLM Evaluation</p>
       <p class="affil">PhD, University of Chicago &middot; San Diego, CA</p>
       <ul class="links">
-        <li><a href="mailto:m1landers@ucsd.edu"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
-        <li><a href="https://scholar.google.com/citations?user=NeyqJzUAAAAJ" rel="me"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>Google Scholar</a></li>
-        <li><a href="https://github.com/msblanders" rel="me"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6 0C6.8 2.8 5.8 3.1 5.8 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/mitchell-landers-4251733a/" rel="me"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>LinkedIn</a></li>
-        <li><a href="https://osf.io/unzg7/" rel="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>OSF</a></li>
-        <li><a href="https://www.researchgate.net/profile/Mitchell-Landers" rel="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16V8h4a2 2 0 0 1 0 4h-4M12 12l3 4"/></svg>ResearchGate</a></li>
-        <li><a href="files/cv.pdf"><svg viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg>CV</a></li>
+        <li><a href="mailto:mitchelllanders@gmail.com"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=NeyqJzUAAAAJ" rel="me"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg>Google Scholar</a></li>
+        <li><a href="https://github.com/msblanders" rel="me"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.7 11.7 0 0 0-6 0C6.8 2.8 5.8 3.1 5.8 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/mitchell-landers-4251733a/" rel="me"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>LinkedIn</a></li>
+        <li><a href="https://osf.io/unzg7/" rel="me"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>OSF</a></li>
+        <li><a href="https://www.researchgate.net/profile/Mitchell-Landers" rel="me"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 16V8h4a2 2 0 0 1 0 4h-4M12 12l3 4"/></svg>ResearchGate</a></li>
+        <li><a href="files/cv.pdf"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6 3h8l5 5v13H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/></svg>CV</a></li>
       </ul>
     </div>
   </header>
 </div>
 
-<main class="wrap">
+<main class="wrap" id="main" tabindex="-1">
 
   <section id="about">
     <div class="section-grid">
@@ -212,11 +226,11 @@
       <div>
         <div class="prose">
           <p class="lede">I study human nature — the mechanisms designed by natural selection, and how they function.</p>
-          <p>I'm a behavioral scientist in San Diego. I received my PhD from the Department of Psychology at the University of Chicago in 2024, working with Alex Shaw, and recently completed a postdoctoral fellowship at UC San Diego with Christine Harris and Michael McCullough. Before graduate school, I studied philosophy at UC Berkeley, then evolutionary psychology with Leda Cosmides and John Tooby at UC Santa Barbara.</p>
+          <p>I'm a behavioral scientist in San Diego. I received my PhD from the Department of Psychology at the University of Chicago in 2024, working with Alex Shaw. My postdoctoral fellowship at UC San Diego with Christine Harris and Michael McCullough ran from September 2024 through August 2026. Before graduate school, I studied philosophy at UC Berkeley and evolutionary psychology with Leda Cosmides and John Tooby at UC Santa Barbara.</p>
           <p>I pursue several lines of research: the functions of social emotions like anger, hatred, envy, shame, guilt, and pride; forgiveness, including third-party forgiveness; and morality, moral judgment, friendship, and alliances.</p>
-          <p>Recently, envy and status are the lines of research I've been most interested in. On envy, I'm developing a novel theory of the emotion, along with two empirical papers testing that model — and, with Christine Harris and Michael McCullough, the Fear of Being Envied (FOBE) Scale, measuring the other side of the envy coin. On status, I'm building agent-based models demonstrating how minds track social status, with implications for international relations — the fingerprints of human nature show up even there.</p>
+          <p>Envy and status are central to my current research. I'm developing a theory of envy and empirical studies that distinguish audience valuation from personal desire. With Michael McCullough and Christine Harris, I developed the Fear of Being Envied (FOBE) Scale; the validation manuscript is under review. On status, I'm building agent-based models to investigate how people track social standing and anticipate coalitional support, including potential applications to international relations.</p>
           <p>With Alex Shaw and Juliana Schroeder, I have investigated the understudied phenomenon of third-party forgiveness, with an eye toward understanding why it is evaluated so differently from victim forgiveness. With Daniel Sznycer and Patrick Durkee, I conducted preregistered critical tests of two prominent, competing theories of shame and guilt with data from two cultures, using structural equation modeling to contrast the theories' predictions.</p>
-          <p>Lately I've been bringing the same measurement toolkit to problems outside the lab: the evaluation of language models, where benchmark design is a psychometric problem; AI-text detection; and sports analytics. I'm also an Associate Editor at <em>Open Inquiry in Mental Health</em> (Open Therapy Institute).</p>
+          <p>Lately I've been bringing the same measurement toolkit to problems outside the lab: the evaluation of language models, where benchmark design is a psychometric problem; AI-text detection; and sports analytics. Since 2026, I've also served as an Associate Editor at <em>Open Inquiry in Mental Health</em> (Open Therapy Institute).</p>
         </div>
         <div class="two-col">
           <div>
@@ -251,9 +265,9 @@
         <div class="filters" role="group" aria-label="Filter publications by topic">
           <button type="button" data-filter="all" aria-pressed="true">All</button>
           <button type="button" data-filter="envy" aria-pressed="false">Envy</button>
-          <button type="button" data-filter="shame" aria-pressed="false">Shame &amp; guilt</button>
+          <button type="button" data-filter="shame" aria-pressed="false">Shame, guilt &amp; pride</button>
           <button type="button" data-filter="anger" aria-pressed="false">Anger &amp; hatred</button>
-          <button type="button" data-filter="forgiveness" aria-pressed="false">Forgiveness</button>
+          <button type="button" data-filter="forgiveness" aria-pressed="false">Morality &amp; forgiveness</button>
           <button type="button" data-filter="status" aria-pressed="false">Status</button>
           <button type="button" data-filter="methods" aria-pressed="false">Methods</button>
         </div>
@@ -264,13 +278,13 @@
             <div class="title"><a href="https://pubmed.ncbi.nlm.nih.gov/40892566/">Green-eyed monster or green-eyed mirage? A new procedure for telling when begrudging others' success is or is not envy</a></div>
             <div class="authors"><b>Landers, M.</b>, &amp; Shaw, A.</div>
             <div class="venue"><i>Emotion</i>, 26(2), 433–449</div>
-            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag">methods</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4770388">PDF →</a></div>
+            <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag">methods</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4770388">Preprint →</a></div>
           </article>
           <article class="pub" data-tags="forgiveness" data-c="forgiveness">
-            <div class="title">Standing on principle: Moral reasons can excuse disloyalty to friends</div>
+            <div class="title"><a href="https://doi.org/10.1016/j.evolhumbehav.2026.106883">Standing on principle: How moral principles can excuse disloyalty</a></div>
             <div class="authors"><b>Landers, M.</b>, DeScioli, P., Mackiel, A., &amp; Shaw, A.</div>
             <div class="venue"><i>Evolution and Human Behavior</i>, 47(4), 106883</div>
-            <div class="meta"><span class="tag" data-t="forgive">forgiveness</span><span class="tag" data-t="forgive">morality</span></div>
+            <div class="meta"><span class="tag" data-t="forgive">morality</span><span class="tag" data-t="forgive">loyalty</span></div>
           </article>
         </div>
 
@@ -281,12 +295,6 @@
             <div class="authors"><b>Landers, M.</b>, Sell, A., Scrivner, C., &amp; Lopez, A.</div>
             <div class="venue"><i>Evolution and Human Behavior</i>, 46(6), 106776</div>
             <div class="meta"><span class="tag" data-t="anger">anger &amp; hatred</span><a href="https://www.psypost.org/new-psychology-research-shows-that-hatred-is-not-just-intense-anger/">Coverage in PsyPost →</a></div>
-          </article>
-          <article class="pub" data-tags="shame" data-c="shame">
-            <div class="title">Cross-cultural regularities and variability in the emotion of shame</div>
-            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
-            <div class="venue">In U. Hess, S. Hareli, &amp; K. Kafetsios (Eds.), <i>Research Handbook on Culture and Emotion</i>. Edward Elgar.</div>
-            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span></div>
           </article>
         </div>
 
@@ -299,23 +307,23 @@
             <div class="meta"><span class="tag" data-t="shame">shame &amp; guilt</span></div>
           </article>
           <article class="pub" data-tags="shame" data-c="shame">
-            <div class="title"><a href="https://psyarxiv.com/nh2yj/">Shame</a></div>
+            <div class="title"><a href="https://doi.org/10.1093/oxfordhb/9780197544754.013.8">Shame</a></div>
             <div class="authors"><b>Landers, M.</b>, Sznycer, D., &amp; Al-Shawaf, L.</div>
             <div class="venue">In L. Al-Shawaf &amp; T. K. Shackelford (Eds.), <i>The Oxford Handbook of Evolution and the Emotions</i> (pp. 145–162). Oxford University Press.</div>
-            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span><a href="https://psyarxiv.com/nh2yj/">PDF →</a></div>
+            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span><a href="https://osf.io/preprints/psyarxiv/nh2yj/">Preprint →</a></div>
           </article>
           <article class="pub" data-tags="anger" data-c="anger">
-            <div class="title"><a href="https://psyarxiv.com/kxdvu/">The neutralization theory of hatred</a></div>
+            <div class="title"><a href="https://doi.org/10.1093/oxfordhb/9780197544754.013.7">The neutralization theory of hatred</a></div>
             <div class="authors">Sell, A., Scrivner, C., <b>Landers, M.</b>, &amp; Lopez, A.</div>
             <div class="venue">In L. Al-Shawaf &amp; T. K. Shackelford (Eds.), <i>The Oxford Handbook of Evolution and the Emotions</i> (pp. 163–180). Oxford University Press.</div>
-            <div class="meta"><span class="tag" data-t="anger">anger &amp; hatred</span><span class="tag status">chapter</span><a href="https://psyarxiv.com/kxdvu/">PDF →</a></div>
+            <div class="meta"><span class="tag" data-t="anger">anger &amp; hatred</span><span class="tag status">chapter</span><a href="https://osf.io/preprints/psyarxiv/kxdvu_v1">Preprint →</a></div>
           </article>
         </div>
 
         <div class="pubgroup" data-group>
           <h3>2023</h3>
           <article class="pub" data-tags="methods" data-c="methods">
-            <div class="title">Cortisol reactivity to psychosocial stress in vulnerable and grandiose narcissists: An exploratory study</div>
+            <div class="title"><a href="https://doi.org/10.3389/fpsyg.2022.1067456">Cortisol reactivity to psychosocial stress in vulnerable and grandiose narcissists: An exploratory study</a></div>
             <div class="authors">Borráz-León, J. I., Spreitzer, A., Scrivner, C., <b>Landers, M.</b>, Lee, R., &amp; Maestripieri, D.</div>
             <div class="venue"><i>Frontiers in Psychology</i>, 13, 1067456</div>
             <div class="meta"><span class="tag">personality</span></div>
@@ -339,28 +347,42 @@
         </div>
 
         <div class="pubgroup" data-group>
-          <h3>Under review &amp; in preparation</h3>
+          <h3>In press</h3>
+          <article class="pub" data-tags="shame" data-c="shame">
+            <div class="title"><a href="https://www.e-elgar.com/shop/gbp/research-handbook-on-culture-and-emotion-9781035329823.html">Cross-cultural regularities and variability in the emotion of shame</a></div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="venue">In U. Hess, S. Hareli, &amp; K. Kafetsios (Eds.), <i>Research Handbook on Culture and Emotion</i>. Edward Elgar Publishing. In press; scheduled for October 2026.</div>
+            <div class="meta"><span class="tag" data-t="shame">shame</span><span class="tag status">chapter</span><span class="tag status">in press</span></div>
+          </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>Under review</h3>
           <article class="pub" data-tags="envy methods" data-c="envy">
             <div class="title">How FOBE-ic are you? Development and initial validation of the Fear of Being Envied Scale</div>
-            <div class="authors"><b>Landers, M.</b>, Harris, C. R., &amp; McCullough, M. E.</div>
+            <div class="authors"><b>Landers, M.</b>, McCullough, M. E., &amp; Harris, C. R.</div>
             <div class="venue">Under review</div>
             <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag">psychometrics</span><span class="tag status">under review</span></div>
           </article>
           <article class="pub" data-tags="forgiveness" data-c="forgiveness">
-            <div class="title">Divine or debased? When and why third-party forgiveness seems immoral</div>
+            <div class="title">Condemned or condoned? When and why third-party forgiveness seems immoral</div>
             <div class="authors"><b>Landers, M.</b>, Schroeder, J., &amp; Shaw, A.</div>
             <div class="venue">Under review</div>
             <div class="meta"><span class="tag" data-t="forgive">forgiveness</span><span class="tag status">under review</span></div>
           </article>
+        </div>
+
+        <div class="pubgroup" data-group>
+          <h3>In preparation</h3>
           <article class="pub" data-tags="envy" data-c="envy">
-            <div class="title">Begrudging what others value, not what I lack: Malicious envy is driven by differential audience evaluations, not personal desire</div>
+            <div class="title">In others’ eyes: Envy tracks audience valuation, not personal desire <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
             <div class="authors"><b>Landers, M.</b>, &amp; Shaw, A.</div>
             <div class="venue">In preparation</div>
             <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag status">in prep</span></div>
           </article>
           <article class="pub" data-tags="envy status" data-c="envy">
-            <div class="title">A competitive-valuation theory of envy <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
-            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="title">The competitive-valuation theory of envy <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
+            <div class="authors"><b>Landers, M.</b>, Harris, C. R., &amp; McCullough, M. E.</div>
             <div class="venue">In preparation</div>
             <div class="meta"><span class="tag" data-t="envy">envy</span><span class="tag" data-t="status">status</span><span class="tag status">in prep</span></div>
           </article>
@@ -369,6 +391,12 @@
             <div class="authors"><b>Landers, M.</b>, Sznycer, D., &amp; Lu, J.</div>
             <div class="venue">In preparation</div>
             <div class="meta"><span class="tag" data-t="status">status</span><span class="tag">modeling</span><span class="tag status">in prep</span></div>
+          </article>
+          <article class="pub" data-tags="shame" data-c="shame">
+            <div class="title">Is pride a self-conscious emotion? Testing competing theories of pride across disparate cultures <span style="font-weight:400;color:var(--muted)">(working title)</span></div>
+            <div class="authors"><b>Landers, M.</b>, &amp; Sznycer, D.</div>
+            <div class="venue">In preparation</div>
+            <div class="meta"><span class="tag" data-t="shame">pride</span><span class="tag status">in prep</span></div>
           </article>
         </div>
         <p class="empty" id="empty">Nothing in this category yet.</p>
@@ -383,7 +411,9 @@
         <div class="card" data-c="deep">
           <span class="tag">in development</span>
           <h3>WTR-Bench</h3>
-          <p>A psychometric benchmark for welfare-tradeoff consistency in language-model agents: a validated item bank, an adaptive titration sampler, and variance decomposition across prompt perturbations, so that a model's score comes with an honest confidence interval.</p>
+          <p>A psychometric benchmark in development for prompted welfare-tradeoff behavior in language models. The implemented item generator produces 3,600 items across six counterbalanced forms, with automated tests of construction, consistency, and payoff integrity.</p>
+          <p>Model evaluation, validation, and scoring with uncertainty estimates are planned; no model results are reported yet.</p>
+          <p><a href="https://github.com/msblanders/wtr-bench">Code and current status →</a></p>
         </div>
         <div class="card" data-c="amber">
           <span class="tag">measurement</span>
@@ -393,12 +423,12 @@
         <div class="card" data-c="status">
           <span class="tag" data-t="status">simulation</span>
           <h3>Status and coalition dynamics</h3>
-          <p>Agent-based models in which status is treated as a prediction about who will side with whom, with model predictions tested against real-world interstate-conflict data.</p>
+          <p>Ongoing research using agent-based models to investigate how status relates to predictions about who will side with whom, including applications to interstate conflict.</p>
         </div>
         <div class="card">
           <span class="tag">editorial</span>
           <h3>Open Inquiry in Mental Health</h3>
-          <p>Associate Editor at the Open Therapy Institute's journal: peer-review management, manuscript handling, and production.</p>
+          <p>Associate Editor since 2026 at the Open Therapy Institute's journal: peer-review management, manuscript handling, and production.</p>
         </div>
       </div>
     </div>
