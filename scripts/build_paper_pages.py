@@ -28,6 +28,7 @@ def build(render_images=False):
         finding = f'<p>{e(p["finding"])}</p>' if p.get("finding") else ""
         note = f'<p class="note">{e(p["equal_authors"])}</p>' if p.get("equal_authors") else ""
         extra = f'<a href="{e(p["extra_url"])}">{e(p["extra_label"])}</a>' if p.get("extra_url") else ""
+        pubmed = f'<a href="{e(p["pubmed"])}">PubMed record</a>' if p.get("pubmed") else ""
         related = "\n".join(f'<li><a href="../{q["slug"]}/">{e(q["heading"])}</a> — <i>{e(q["journal"])}</i>, {q["year"]}</li>' for q in papers if q != p)
         author_meta = "\n".join(f'<meta name="citation_author" content="{e(a)}">' for a in p["authors"])
         methods = "".join(f'<li>{e(m)}</li>' for m in p["methods"])
@@ -92,7 +93,7 @@ def build(render_images=False):
     <h2 id="citation-title">Publication</h2>
     <p>{e(p["citation_authors"])} ({p["year"]}). {e(p["title"])}. <i>{e(p["journal"])}, {p["volume"]}</i>{f'({p["issue"]})' if p.get("issue") else ''}, {p["pages"]}. <a href="https://doi.org/{p["doi"]}">https://doi.org/{p["doi"]}</a></p>
     {note}
-    <div class="resources"><a href="{p["pubmed"]}">PubMed record</a>{extra}<a href="../../#publications">All publications</a></div>
+    <div class="resources">{pubmed}{extra}<a href="../../#publications">All publications</a></div>
   </section>
   <nav class="related" aria-label="Related papers"><h2>Related research</h2><ul>{related}</ul></nav>
 </main>
@@ -102,6 +103,9 @@ def build(render_images=False):
 '''
         (folder / "index.html").write_text(html)
         title_lines = "\n".join(f'<text x="78" y="{234+i*83}" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="67" font-weight="500">{e(line)}</text>' for i, line in enumerate(p["card_lines"]))
+        card_subtitle = f'<text x="82" y="317" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="32">{e(p["card_subtitle"])}</text>' if p.get("card_subtitle") else ""
+        if card_subtitle:
+            title_lines += "\n" + card_subtitle
         svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
 <title id="title">{e(p["heading"])}</title>
 <desc id="description">{e(venue + '. ' + authors + '. ' + p["card_detail"])}</desc>

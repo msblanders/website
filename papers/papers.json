@@ -4,7 +4,10 @@
     "title": "Green-eyed monster or green-eyed mirage? A new procedure for telling when begrudging others' success is or is not envy",
     "heading": "Green-eyed monster or green-eyed mirage?",
     "subtitle": "A new procedure for telling when begrudging others' success is or is not envy",
-    "authors": ["Mitchell Landers", "Alex Shaw"],
+    "authors": [
+      "Mitchell Landers",
+      "Alex Shaw"
+    ],
     "citation_authors": "Landers, M., & Shaw, A.",
     "journal": "Emotion",
     "year": 2026,
@@ -16,12 +19,20 @@
     "description": "Eight studies introduce a third-party criterion for testing whether an observed effect is specifically attributable to envy.",
     "summary": "Across eight studies (N = 1,507), this paper develops a third-party criterion for testing whether an observed effect is attributable specifically to envy. It checks whether the same elicitor affects uninvolved observers, providing a comparison for interpreting the effect.",
     "finding": "Deservingness effects failed the criterion; audience-valuation effects passed. The criterion addresses whether a particular effect is envy-specific, rather than establishing what an instrument measures in general.",
-    "methods": ["Experimental design", "Construct validity", "8 studies", "N = 1,507"],
+    "methods": [
+      "Experimental design",
+      "Construct validity",
+      "8 studies",
+      "N = 1,507"
+    ],
     "primary_label": "Read the publication",
     "primary_url": "https://doi.org/10.1037/emo0001575",
     "secondary_label": "View the preprint",
     "secondary_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4770388",
-    "card_lines": ["Green-eyed monster", "or green-eyed mirage?"],
+    "card_lines": [
+      "Green-eyed monster",
+      "or green-eyed mirage?"
+    ],
     "card_detail": "8 studies · 1,507 participants · Construct validity"
   },
   {
@@ -29,7 +40,11 @@
     "title": "Are self-conscious emotions about the self? Testing competing theories of shame and guilt across two disparate cultures",
     "heading": "Are self-conscious emotions about the self?",
     "subtitle": "Testing competing theories of shame and guilt across two disparate cultures",
-    "authors": ["Mitchell Landers", "Daniel Sznycer", "Patrick K. Durkee"],
+    "authors": [
+      "Mitchell Landers",
+      "Daniel Sznycer",
+      "Patrick K. Durkee"
+    ],
     "citation_authors": "Landers, M., Sznycer, D., & Durkee, P. K.",
     "equal_authors": "Mitchell Landers and Daniel Sznycer contributed equally (joint first authors).",
     "journal": "Emotion",
@@ -41,14 +56,22 @@
     "pubmed": "https://pubmed.ncbi.nlm.nih.gov/38252113/",
     "description": "Cross-cultural tests of competing theories of shame and guilt using experiments and structural equation models with US and Indian participants (N = 853).",
     "summary": "This paper tests competing theories of shame and guilt using experimental manipulations and structural equation models with participants in the United States and India (N = 853). The research uses preregistered tests to distinguish the theories' predictions across two cultural settings.",
-    "methods": ["Cross-cultural research", "Experimental design", "Structural equation modeling", "N = 853"],
+    "methods": [
+      "Cross-cultural research",
+      "Experimental design",
+      "Structural equation modeling",
+      "N = 853"
+    ],
     "primary_label": "Read the publication",
     "primary_url": "https://doi.org/10.1037/emo0001321",
     "secondary_label": "Read the author-shared PDF",
     "secondary_url": "https://drive.google.com/file/d/1ELooPgB88Zx9BY20a17nSpYC0Wu0Gotm/view?usp=sharing",
     "extra_url": "https://drive.google.com/file/d/1gwL0MXo6-NXrENH_XBm8tsexb1tPkUcI/view?usp=sharing",
     "extra_label": "Supplement and code (shared by Sznycer Lab)",
-    "card_lines": ["Are self-conscious", "emotions about the self?"],
+    "card_lines": [
+      "Are self-conscious",
+      "emotions about the self?"
+    ],
     "card_detail": "United States & India · 853 participants · Theory testing"
   },
   {
@@ -56,7 +79,10 @@
     "title": "The evolution of shame and its display",
     "heading": "The evolution of shame and its display",
     "subtitle": "A theoretical review of shame, social devaluation, and emotional display",
-    "authors": ["Mitchell Landers", "Daniel Sznycer"],
+    "authors": [
+      "Mitchell Landers",
+      "Daniel Sznycer"
+    ],
     "citation_authors": "Landers, M., & Sznycer, D.",
     "journal": "Evolutionary Human Sciences",
     "year": 2022,
@@ -66,12 +92,95 @@
     "pubmed": "https://pubmed.ncbi.nlm.nih.gov/37588893/",
     "description": "A theoretical review synthesizing evidence on shame, the threat of social devaluation, and the functions of shame's characteristic display.",
     "summary": "This theoretical review synthesizes evidence on shame and its characteristic display. It examines shame as a response to the threat of social devaluation and considers how posture, gaze, and speech may help limit reputational damage.",
-    "methods": ["Evidence synthesis", "Theory development", "Social emotions"],
+    "methods": [
+      "Evidence synthesis",
+      "Theory development",
+      "Social emotions"
+    ],
     "primary_label": "Read the open-access article",
     "primary_url": "https://www.cambridge.org/core/journals/evolutionary-human-sciences/article/evolution-of-shame-and-its-display/9564692959B2611285BEF378DBDF50B9",
     "secondary_label": "Read on PubMed Central",
     "secondary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10426012/",
-    "card_lines": ["The evolution of shame", "and its display"],
+    "card_lines": [
+      "The evolution of shame",
+      "and its display"
+    ],
     "card_detail": "Evidence synthesis · Social devaluation · Emotional display"
+  },
+  {
+    "slug": "anger-and-hatred",
+    "title": "The evolutionary logic of anger and hatred: An empirical test",
+    "heading": "The evolutionary logic of anger and hatred",
+    "subtitle": "An empirical test",
+    "authors": [
+      "Mitchell Landers",
+      "Aaron Sell",
+      "Coltan Scrivner",
+      "Anthony Lopez"
+    ],
+    "citation_authors": "Landers, M., Sell, A., Scrivner, C., & Lopez, A.",
+    "journal": "Evolution and Human Behavior",
+    "year": 2025,
+    "volume": "46",
+    "issue": "6",
+    "pages": "106776",
+    "doi": "10.1016/j.evolhumbehav.2025.106776",
+    "description": "A preregistered US/UK recall study (N = 725) distinguishing the self-reported goals associated with anger and hatred.",
+    "summary": "In a preregistered recall study, 725 participants in the United States and United Kingdom described experiences of anger or hatred. The study tested predictions about the goals associated with each emotion.",
+    "finding": "Based on self-reported goals, anger was associated with seeking better treatment, while hatred was associated with distancing from or harming the target.",
+    "methods": [
+      "Preregistered research",
+      "Recall design",
+      "United States and United Kingdom",
+      "N = 725"
+    ],
+    "primary_label": "Read the publication",
+    "primary_url": "https://doi.org/10.1016/j.evolhumbehav.2025.106776",
+    "secondary_label": "Read the article PDF",
+    "secondary_url": "https://static1.squarespace.com/static/67f414b9df92420ec2ed84b1/t/691e10e0277f9f2cdd82dcc7/1763578080684/The%2Bevolutionary%2Blogic%2Bof%2Banger%2Band%2Bhatred-%2Ban%2Bempirical%2Btest.pdf",
+    "extra_url": "https://www.psypost.org/new-psychology-research-shows-that-hatred-is-not-just-intense-anger/",
+    "extra_label": "Coverage in PsyPost",
+    "card_lines": [
+      "The evolutionary logic",
+      "of anger and hatred"
+    ],
+    "card_detail": "United States & United Kingdom · 725 participants · Recall study"
+  },
+  {
+    "slug": "standing-on-principle",
+    "title": "Standing on principle: How moral principles can excuse disloyalty",
+    "heading": "Standing on principle",
+    "subtitle": "How moral principles can excuse disloyalty",
+    "authors": [
+      "Mitchell Landers",
+      "Peter DeScioli",
+      "Alex Mackiel",
+      "Alex Shaw"
+    ],
+    "citation_authors": "Landers, M., DeScioli, P., Mackiel, A., & Shaw, A.",
+    "journal": "Evolution and Human Behavior",
+    "year": 2026,
+    "volume": "47",
+    "issue": "4",
+    "pages": "106883",
+    "doi": "10.1016/j.evolhumbehav.2026.106883",
+    "description": "Seven experiments examine when people excuse disloyalty to a friend and the distinctive role of the side-taker’s own moral principles.",
+    "summary": "Across seven experiments—four in the main article and three in the supplement—participants judged people choosing sides in conflicts involving their friends. The studies varied whether friends were morally right or wrong and whether opposition was motivated by moral principles or other considerations.",
+    "finding": "People excused opposing a friend when the decision followed the side-taker’s own moral principles. Other motives, or merely appealing to other people’s moral judgments, did not provide the same excuse for disloyalty.",
+    "methods": [
+      "Experimental design",
+      "7 experiments",
+      "Moral judgment",
+      "Friendship and loyalty"
+    ],
+    "primary_label": "Read the publication",
+    "primary_url": "https://doi.org/10.1016/j.evolhumbehav.2026.106883",
+    "secondary_label": "Read the abstract at Stony Brook",
+    "secondary_url": "https://researchconnect.stonybrook.edu/en/publications/standing-on-principle-how-moral-principles-can-excuse-disloyalty/",
+    "card_lines": [
+      "Standing on principle"
+    ],
+    "card_subtitle": "How moral principles can excuse disloyalty",
+    "card_detail": "7 experiments · Moral judgment · Friendship & loyalty"
   }
 ]
