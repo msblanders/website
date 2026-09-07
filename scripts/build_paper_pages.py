@@ -22,7 +22,7 @@ def build(render_images=False):
         folder = ROOT / "papers" / p["slug"]
         folder.mkdir(parents=True, exist_ok=True)
         url = BASE + "papers/" + p["slug"] + "/"
-        image_name = p["slug"] + "-preview-v2.png"
+        image_name = p["slug"] + f'-preview-v{p.get("image_version", 2)}.png'
         image_url = url + image_name
         e = escape
         authors = " · ".join(p["authors"])
@@ -106,8 +106,20 @@ def build(render_images=False):
 </html>
 '''
         (folder / "index.html").write_text(html)
-        title_lines = "\n".join(f'<text x="78" y="{234+i*89}" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="74" font-weight="500">{e(line)}</text>' for i, line in enumerate(p["card_lines"]))
-        card_subtitle = f'<text x="82" y="323" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="35" font-weight="500">{e(p["card_subtitle"])}</text>' if p.get("card_subtitle") else ""
+        if p.get("share_page"):
+            # A separate page identity lets sharing crawlers fetch a fresh card.
+            # Keep it beside index.html so relative links retain their meaning.
+            share_page = p["share_page"]
+            if Path(share_page).name != share_page or not share_page.endswith(".html"):
+                raise ValueError("share_page must be an HTML filename")
+            share_url = url + share_page
+            share_html = html.replace(f'<link rel="canonical" href="{url}">', f'<link rel="canonical" href="{share_url}">')
+            share_html = share_html.replace(f'<meta property="og:url" content="{url}">', f'<meta property="og:url" content="{share_url}">')
+            (folder / share_page).write_text(share_html)
+        title_size = p.get("card_title_size", 74)
+        subtitle_size = p.get("card_subtitle_size", 35)
+        title_lines = "\n".join(f'<text x="78" y="{234+i*89}" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="{title_size}" font-weight="500">{e(line)}</text>' for i, line in enumerate(p["card_lines"]))
+        card_subtitle = f'<text x="82" y="323" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="{subtitle_size}" font-weight="500">{e(p["card_subtitle"])}</text>' if p.get("card_subtitle") else ""
         if card_subtitle:
             title_lines += "\n" + card_subtitle
         svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1260" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
