@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+<title id="title">Are self-conscious emotions about the self?</title>
+<desc id="description">Emotion · 2024. Mitchell Landers · Daniel Sznycer · Patrick K. Durkee. United States &amp; India · 853 participants · Theory testing</desc>
+<!-- Editable sharing card; typography and colors match the main website. -->
+<defs><linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#15343E"/><stop offset="1" stop-color="#1E4B57"/></linearGradient><clipPath id="canvas"><rect width="1200" height="630"/></clipPath></defs>
+<g clip-path="url(#canvas)">
+<rect width="1200" height="630" fill="url(#background)"/>
+<g fill="none" stroke="#A9C2C6" stroke-width="1.5" opacity=".12"><circle cx="1138" cy="98" r="228"/><circle cx="1138" cy="98" r="306"/><circle cx="1138" cy="98" r="384"/></g>
+<text x="82" y="96" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="23" font-weight="500">EMOTION · 2024</text>
+<rect x="82" y="131" width="64" height="5" rx="2.5" fill="#C98B1F"/>
+<text x="78" y="234" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="67" font-weight="500">Are self-conscious</text>
+<text x="78" y="317" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="67" font-weight="500">emotions about the self?</text>
+<text x="82" y="390" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="27">United States &amp; India · 853 participants · Theory testing</text>
+<path d="M82 478 H1118" stroke="#A9C2C6" stroke-opacity=".25"/>
+<text x="82" y="529" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="25">Mitchell Landers · Daniel Sznycer · Patrick K. Durkee</text>
+<text x="82" y="577" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="22">msblanders.github.io/website</text>
+</g></svg>
