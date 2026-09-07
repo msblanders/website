@@ -4,6 +4,8 @@ Run with Python 3 from any directory. Add --images to render the SVG cards to PN
 that optional step needs CairoSVG and the site's Google Fonts installed locally
 (Fraunces 9pt Soft Medium and IBM Plex Sans). Commit the generated HTML/SVG/PNG.
 GitHub Pages serves the committed files directly, without running this script.
+Sharing PNGs render from vector artwork at 2400 by 1260 pixels. A versioned
+filename lets sharing services fetch a fresh asset when the artwork changes.
 """
 from pathlib import Path
 from html import escape
@@ -20,7 +22,8 @@ def build(render_images=False):
         folder = ROOT / "papers" / p["slug"]
         folder.mkdir(parents=True, exist_ok=True)
         url = BASE + "papers/" + p["slug"] + "/"
-        image_url = url + "preview.png"
+        image_name = p["slug"] + "-preview-v2.png"
+        image_url = url + image_name
         e = escape
         authors = " · ".join(p["authors"])
         venue = f'{p["journal"]} · {p["year"]}'
@@ -46,9 +49,10 @@ def build(render_images=False):
 <meta property="og:description" content="{e(p["description"])}">
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{image_url}">
+<meta property="og:image:secure_url" content="{image_url}">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
 <meta property="og:image:alt" content="{e(p["heading"] + ' — ' + venue + '. ' + authors)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{e(p["heading"])}">
@@ -102,11 +106,11 @@ def build(render_images=False):
 </html>
 '''
         (folder / "index.html").write_text(html)
-        title_lines = "\n".join(f'<text x="78" y="{234+i*83}" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="67" font-weight="500">{e(line)}</text>' for i, line in enumerate(p["card_lines"]))
-        card_subtitle = f'<text x="82" y="317" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="32">{e(p["card_subtitle"])}</text>' if p.get("card_subtitle") else ""
+        title_lines = "\n".join(f'<text x="78" y="{234+i*89}" fill="#EAF1F2" font-family="Fraunces 9pt Soft" font-size="74" font-weight="500">{e(line)}</text>' for i, line in enumerate(p["card_lines"]))
+        card_subtitle = f'<text x="82" y="323" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="35" font-weight="500">{e(p["card_subtitle"])}</text>' if p.get("card_subtitle") else ""
         if card_subtitle:
             title_lines += "\n" + card_subtitle
-        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+        svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1260" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
 <title id="title">{e(p["heading"])}</title>
 <desc id="description">{e(venue + '. ' + authors + '. ' + p["card_detail"])}</desc>
 <!-- Editable sharing card; typography and colors match the main website. -->
@@ -114,19 +118,18 @@ def build(render_images=False):
 <g clip-path="url(#canvas)">
 <rect width="1200" height="630" fill="url(#background)"/>
 <g fill="none" stroke="#A9C2C6" stroke-width="1.5" opacity=".12"><circle cx="1138" cy="98" r="228"/><circle cx="1138" cy="98" r="306"/><circle cx="1138" cy="98" r="384"/></g>
-<text x="82" y="96" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="23" font-weight="500">{e(venue.upper())}</text>
+<text x="82" y="96" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="27" font-weight="500">{e(venue.upper())}</text>
 <rect x="82" y="131" width="64" height="5" rx="2.5" fill="#C98B1F"/>
 {title_lines}
-<text x="82" y="390" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="27">{e(p["card_detail"])}</text>
+<text x="82" y="409" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="30" font-weight="500">{e(p["card_detail"])}</text>
 <path d="M82 478 H1118" stroke="#A9C2C6" stroke-opacity=".25"/>
-<text x="82" y="529" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="25">{e(authors)}</text>
-<text x="82" y="577" fill="#A9C2C6" font-family="IBM Plex Sans" font-size="22">msblanders.github.io/website</text>
+<text x="82" y="543" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="29" font-weight="500">{e(authors)}</text>
 </g></svg>
 '''
         (folder / "preview.svg").write_text(svg)
         if render_images:
             import cairosvg
-            cairosvg.svg2png(bytestring=svg.encode(), write_to=str(folder / "preview.png"))
+            cairosvg.svg2png(bytestring=svg.encode(), write_to=str(folder / image_name))
         print(p["slug"], "built")
 
 
