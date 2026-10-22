@@ -33,7 +33,11 @@
       "Green-eyed monster",
       "or green-eyed mirage?"
     ],
-    "card_detail": "8 studies · 1,507 participants · Construct validity"
+    "card_detail": "8 studies · 1,507 participants · Construct validity",
+    "pdf": "../../files/papers/green-eyed-monster.pdf",
+    "pdf_note": "Published journal article.",
+    "extra_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4770388",
+    "extra_label": "Earlier preprint"
   },
   {
     "slug": "shame-and-guilt",
@@ -247,8 +251,8 @@
       "Social devaluation"
     ],
     "citation": "Landers, M., & Sznycer, D. (in press). Cross-cultural regularities and variability in the emotion of shame. In U. Hess, S. Hareli, & K. Kafetsios (Eds.), Research Handbook on Culture and Emotion. Edward Elgar Publishing.",
-    "publisher_url": "https://www.e-elgar.com/shop/gbp/research-handbook-on-culture-and-emotion-9781035329823.html",
-    "pdf_note": "Author manuscript; marked forthcoming in the supplied version.",
+    "publisher_url": "https://www.e-elgar.com/shop/usd/research-handbook-on-culture-and-emotion-9781035329823.html",
+    "pdf_note": "Author manuscript. Book scheduled for publication in November 2026.",
     "card_lines": [
       "Shame across",
       "cultures"
@@ -292,5 +296,42 @@
     "card_detail": "An exploratory study of cortisol reactivity",
     "card_authors": "Borráz-León · Spreitzer · Scrivner · Landers · Lee · Maestripieri",
     "pdf": "../../files/papers/narcissism-and-stress.pdf"
+  },
+  {
+    "slug": "neutralization-of-hatred",
+    "heading": "The neutralization theory of hatred",
+    "title": "The neutralization theory of hatred",
+    "subtitle": "A functional account of hatred as an emotion distinct from anger",
+    "authors": [
+      "Aaron Sell",
+      "Coltan Scrivner",
+      "Mitchell Landers",
+      "Anthony C. Lopez"
+    ],
+    "journal": "The Oxford Handbook of Evolution and the Emotions",
+    "year": 2024,
+    "chapter": true,
+    "kind": "Book chapter",
+    "doi": "10.1093/oxfordhb/9780197544754.013.7",
+    "description": "A theoretical account of hatred, its triggers, and its behavioral consequences. Read the chapter overview and published Oxford PDF.",
+    "summary": "This chapter proposes that hatred and anger address different adaptive problems. In the neutralization theory, hatred responds to cues that another person’s continued presence imposes net costs. The theory predicts that hatred can motivate avoidance or actions aimed at reducing the target’s capacity to impose those costs.",
+    "finding": "The chapter develops predictions about hatred’s triggers, internal representations, and behavioral consequences. It presents a theoretical framework and identifies hypotheses for empirical testing.",
+    "methods": [
+      "Theoretical chapter",
+      "Emotion differentiation",
+      "Evolutionary psychology"
+    ],
+    "citation": "Sell, A., Scrivner, C., Landers, M., & Lopez, A. (2024). The neutralization theory of hatred. In L. Al-Shawaf & T. K. Shackelford (Eds.), The Oxford Handbook of Evolution and the Emotions (pp. 163–180). Oxford University Press.",
+    "pdf": "../../files/papers/neutralization-of-hatred.pdf",
+    "pdf_note": "Published Oxford Handbook chapter.",
+    "extra_url": "https://osf.io/preprints/psyarxiv/kxdvu_v1",
+    "extra_label": "Preprint on PsyArXiv",
+    "card_lines": [
+      "The neutralization",
+      "theory of hatred"
+    ],
+    "card_title_size": 62,
+    "card_detail": "A functional account of a distinct emotion",
+    "card_venue": "Oxford Handbook · 2024"
   }
 ]
