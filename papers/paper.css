@@ -13,6 +13,7 @@ a:focus-visible{outline:3px solid var(--amber);outline-offset:5px;border-radius:
 h1{font:500 clamp(35px,4.5vw,54px)/1.16 "Fraunces",Georgia,serif;max-width:900px;margin:0 0 22px;text-wrap:balance}
 .subtitle{font-size:clamp(20px,2.5vw,25px);line-height:1.45;max-width:840px;margin:0 0 27px;color:var(--light)}
 .authors{font-size:17px;margin:24px 0 5px}.equal{font-size:14px;color:var(--soft);margin:0}
+.pdf-note{font-size:14px;color:var(--soft);margin:16px 0 0}
 .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}.button{display:inline-block;background:var(--light);color:var(--deep);border:1px solid var(--light);padding:10px 20px;border-radius:5px;font-size:16px;font-weight:500;text-decoration:none}.button.secondary{color:var(--light);background:transparent;border-color:var(--soft)}.button:hover{background:white;color:var(--deep)}
 main.wrap{padding-block:40px 48px}
 .overview{background:var(--panel);padding:30px 34px;border:1px solid var(--line);border-radius:8px}

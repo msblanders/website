@@ -72,7 +72,8 @@
       "Are self-conscious",
       "emotions about the self?"
     ],
-    "card_detail": "United States & India · 853 participants · Theory testing"
+    "card_detail": "United States & India · 853 participants · Theory testing",
+    "pdf": "../../files/papers/shame-and-guilt.pdf"
   },
   {
     "slug": "evolution-of-shame",
@@ -105,7 +106,8 @@
       "The evolution of shame",
       "and its display"
     ],
-    "card_detail": "Evidence synthesis · Social devaluation · Emotional display"
+    "card_detail": "Evidence synthesis · Social devaluation · Emotional display",
+    "pdf": "../../files/papers/evolution-of-shame.pdf"
   },
   {
     "slug": "anger-and-hatred",
@@ -144,7 +146,8 @@
       "The evolutionary logic",
       "of anger and hatred"
     ],
-    "card_detail": "United States & United Kingdom · 725 participants · Recall study"
+    "card_detail": "United States & United Kingdom · 725 participants · Recall study",
+    "pdf": "../../files/papers/anger-and-hatred.pdf"
   },
   {
     "slug": "standing-on-principle",
@@ -185,6 +188,109 @@
     "image_version": 3,
     "share_page": "share.html",
     "card_title_size": 82,
-    "card_subtitle_size": 38
+    "card_subtitle_size": 38,
+    "pdf": "../../files/papers/standing-on-principle.pdf"
+  },
+  {
+    "slug": "shame-oxford-handbook",
+    "heading": "Shame",
+    "title": "Shame",
+    "subtitle": "An evolutionary account of shame and the threat of social devaluation",
+    "authors": [
+      "Mitchell Landers",
+      "Daniel Sznycer",
+      "Laith Al-Shawaf"
+    ],
+    "journal": "The Oxford Handbook of Evolution and the Emotions",
+    "year": 2024,
+    "chapter": true,
+    "kind": "Book chapter",
+    "doi": "10.1093/oxfordhb/9780197544754.013.8",
+    "description": "An evolutionary review of shame as a system for managing reputational threats and the costs of social devaluation.",
+    "summary": "Why does shame occur, and what does it accomplish? This chapter reviews an evolutionary account in which shame helps people anticipate and manage the costs of being devalued by others. It considers how shame can discourage costly choices, limit the spread of damaging information, and coordinate responses when social devaluation occurs.",
+    "finding": "The chapter brings together theory and evidence on the information threat account of shame, including its implications for emotion, behavior, and social evaluation.",
+    "methods": [
+      "Theoretical review",
+      "Social evaluation",
+      "Evolutionary psychology"
+    ],
+    "citation": "Landers, M., Sznycer, D., & Al-Shawaf, L. (2024). Shame. In L. Al-Shawaf & T. K. Shackelford (Eds.), The Oxford Handbook of Evolution and the Emotions (pp. 145–162). Oxford University Press.",
+    "extra_url": "https://osf.io/preprints/psyarxiv/nh2yj/",
+    "extra_label": "Earlier preprint",
+    "card_lines": [
+      "Shame"
+    ],
+    "card_subtitle": "An evolutionary account",
+    "card_detail": "Reputation, social evaluation, and emotional design",
+    "card_venue": "Oxford Handbook · 2024",
+    "pdf": "../../files/papers/shame-oxford-handbook.pdf"
+  },
+  {
+    "slug": "shame-across-cultures",
+    "heading": "Shame across cultures",
+    "title": "Cross-cultural regularities and variability in the emotion of shame",
+    "subtitle": "Cross-cultural regularities and variability in the emotion of shame",
+    "authors": [
+      "Mitchell Landers",
+      "Daniel Sznycer"
+    ],
+    "journal": "Research Handbook on Culture and Emotion",
+    "year": "In press",
+    "chapter": true,
+    "kind": "Book chapter",
+    "description": "An adaptationist account of similarities and differences in shame across cultures. Author manuscript of a forthcoming handbook chapter.",
+    "summary": "Shame appears across cultures, yet the situations that elicit it and the ways people express it vary. This chapter examines how an adaptationist account can explain both patterns: a system that manages the threat of social devaluation can produce different responses when local audiences, values, and circumstances differ.",
+    "finding": "The chapter argues that cultural variation and cross-cultural regularities can be understood within a shared functional account of shame. It is a theoretical synthesis rather than a report of a new experiment.",
+    "methods": [
+      "Theoretical review",
+      "Cross-cultural variation",
+      "Social devaluation"
+    ],
+    "citation": "Landers, M., & Sznycer, D. (in press). Cross-cultural regularities and variability in the emotion of shame. In U. Hess, S. Hareli, & K. Kafetsios (Eds.), Research Handbook on Culture and Emotion. Edward Elgar Publishing.",
+    "publisher_url": "https://www.e-elgar.com/shop/gbp/research-handbook-on-culture-and-emotion-9781035329823.html",
+    "pdf_note": "Author manuscript; marked forthcoming in the supplied version.",
+    "card_lines": [
+      "Shame across",
+      "cultures"
+    ],
+    "card_detail": "Shared functions, varied expressions",
+    "card_venue": "Handbook chapter · In press",
+    "pdf": "../../files/papers/shame-across-cultures.pdf"
+  },
+  {
+    "slug": "narcissism-and-stress",
+    "heading": "Narcissism and stress",
+    "title": "Cortisol reactivity to psychosocial stress in vulnerable and grandiose narcissists: An exploratory study",
+    "subtitle": "Cortisol reactivity to psychosocial stress in vulnerable and grandiose narcissists: An exploratory study",
+    "authors": [
+      "Javier I. Borráz-León",
+      "Alena Spreitzer",
+      "Coltan Scrivner",
+      "Mitchell Landers",
+      "Royce Lee",
+      "Dario Maestripieri"
+    ],
+    "journal": "Frontiers in Psychology",
+    "year": 2023,
+    "volume": "13",
+    "pages": "1067456",
+    "doi": "10.3389/fpsyg.2022.1067456",
+    "description": "An exploratory study of cortisol and emotional responses to social evaluation in people differing in vulnerable and grandiose narcissism.",
+    "summary": "This exploratory study examined whether vulnerable and grandiose narcissism are associated with different responses to social evaluation. Forty-seven participants completed the Trier Social Stress Test, provided saliva samples for cortisol measurement, and answered personality questionnaires.",
+    "finding": "Participants with higher vulnerable narcissism scores showed stronger cortisol and emotional responses than those with higher grandiose narcissism scores. The small, exploratory sample calls for confirmation in larger and more diverse samples.",
+    "methods": [
+      "N = 47",
+      "Trier Social Stress Test",
+      "Salivary cortisol",
+      "Personality questionnaires"
+    ],
+    "citation_authors": "Borráz-León, J. I., Spreitzer, A., Scrivner, C., Landers, M., Lee, R., & Maestripieri, D.",
+    "card_lines": [
+      "Narcissism",
+      "and stress"
+    ],
+    "card_detail": "An exploratory study of cortisol reactivity",
+    "card_authors": "Borráz-León · Spreitzer · Scrivner · Landers · Lee · Maestripieri",
+    "pdf": "../../files/papers/narcissism-and-stress.pdf"
   }
 ]

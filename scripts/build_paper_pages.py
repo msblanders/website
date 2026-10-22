@@ -35,6 +35,31 @@ def build(render_images=False):
         related = "\n".join(f'<li><a href="../{q["slug"]}/">{e(q["heading"])}</a> — <i>{e(q["journal"])}</i>, {q["year"]}</li>' for q in papers if q != p)
         author_meta = "\n".join(f'<meta name="citation_author" content="{e(a)}">' for a in p["authors"])
         methods = "".join(f'<li>{e(m)}</li>' for m in p["methods"])
+        kind = p.get("kind", "Published research")
+        metadata = f'<meta name="citation_{"inbook_title" if p.get("chapter") else "journal_title"}" content="{e(p["journal"])}">'
+        if str(p["year"]).isdigit():
+            metadata += f'\n<meta name="citation_publication_date" content="{p["year"]}">'
+        if p.get("doi"):
+            metadata += f'\n<meta name="citation_doi" content="{e(p["doi"])}">'
+        if p.get("pdf"):
+            pdf = e(p["pdf"])
+            pdf_url = BASE + "files/papers/" + p["pdf"].split("/")[-1]
+            metadata += f'\n<meta name="citation_pdf_url" content="{e(pdf_url)}">'
+            actions = f'<a class="button" href="{pdf}">Read PDF</a><a class="button secondary" href="{pdf}" download>Download PDF</a>'
+            if p.get("doi"):
+                actions += f'<a class="button secondary" href="https://doi.org/{e(p["doi"])}">Publisher page</a>'
+            elif p.get("publisher_url"):
+                actions += f'<a class="button secondary" href="{e(p["publisher_url"])}">Publisher page</a>'
+        else:
+            actions = f'<a class="button" href="{e(p["primary_url"])}">{e(p["primary_label"])}</a><a class="button secondary" href="{e(p["secondary_url"])}">{e(p["secondary_label"])}</a>'
+        version_note = f'<p class="pdf-note">{e(p["pdf_note"])}</p>' if p.get("pdf_note") else ""
+        if p.get("citation"):
+            citation = e(p["citation"])
+        else:
+            issue = "(" + str(p["issue"]) + ")" if p.get("issue") else ""
+            citation = f'{e(p["citation_authors"])} ({p["year"]}). {e(p["title"])}. <i>{e(p["journal"])}, {p["volume"]}</i>{issue}, {p["pages"]}.'
+        if p.get("doi"):
+            citation += f' <a href="https://doi.org/{e(p["doi"])}">https://doi.org/{e(p["doi"])}</a>'
         html = f'''<!doctype html>
 <html lang="en">
 <head>
@@ -61,9 +86,7 @@ def build(render_images=False):
 <meta name="twitter:image:alt" content="{e(p["heading"] + ' — ' + venue + '. ' + authors)}">
 <meta name="citation_title" content="{e(p["title"])}">
 {author_meta}
-<meta name="citation_journal_title" content="{e(p["journal"])}">
-<meta name="citation_publication_date" content="{p["year"]}">
-<meta name="citation_doi" content="{p["doi"]}">
+{metadata}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..600,50&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
@@ -76,15 +99,15 @@ def build(render_images=False):
   <nav aria-label="Main navigation"><a href="../../#publications">Publications</a><a href="../../files/cv.pdf">CV</a></nav>
 </header>
 <div class="hero"><div class="wrap">
-  <p class="eyebrow">Published research · {e(venue)}</p>
+  <p class="eyebrow">{e(kind)} · {e(venue)}</p>
   <h1>{e(p["heading"])}</h1>
   <p class="subtitle">{e(p["subtitle"])}</p>
   <p class="authors">{e(authors)}</p>
   {equal}
   <div class="actions">
-    <a class="button" href="{e(p["primary_url"])}">{e(p["primary_label"])}</a>
-    <a class="button secondary" href="{e(p["secondary_url"])}">{e(p["secondary_label"])}</a>
+    {actions}
   </div>
+  {version_note}
 </div></div>
 <main class="wrap" id="main" tabindex="-1">
   <section class="overview" aria-labelledby="overview-title">
@@ -95,7 +118,7 @@ def build(render_images=False):
   </section>
   <section class="citation" aria-labelledby="citation-title">
     <h2 id="citation-title">Publication</h2>
-    <p>{e(p["citation_authors"])} ({p["year"]}). {e(p["title"])}. <i>{e(p["journal"])}, {p["volume"]}</i>{f'({p["issue"]})' if p.get("issue") else ''}, {p["pages"]}. <a href="https://doi.org/{p["doi"]}">https://doi.org/{p["doi"]}</a></p>
+    <p>{citation}</p>
     {note}
     <div class="resources">{pubmed}{extra}<a href="../../#publications">All publications</a></div>
   </section>
@@ -130,12 +153,12 @@ def build(render_images=False):
 <g clip-path="url(#canvas)">
 <rect width="1200" height="630" fill="url(#background)"/>
 <g fill="none" stroke="#A9C2C6" stroke-width="1.5" opacity=".12"><circle cx="1138" cy="98" r="228"/><circle cx="1138" cy="98" r="306"/><circle cx="1138" cy="98" r="384"/></g>
-<text x="82" y="96" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="27" font-weight="500">{e(venue.upper())}</text>
+<text x="82" y="96" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="27" font-weight="500">{e(p.get("card_venue", venue).upper())}</text>
 <rect x="82" y="131" width="64" height="5" rx="2.5" fill="#C98B1F"/>
 {title_lines}
 <text x="82" y="409" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="30" font-weight="500">{e(p["card_detail"])}</text>
 <path d="M82 478 H1118" stroke="#A9C2C6" stroke-opacity=".25"/>
-<text x="82" y="543" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="29" font-weight="500">{e(authors)}</text>
+<text x="82" y="543" fill="#EAF1F2" font-family="IBM Plex Sans" font-size="29" font-weight="500">{e(p.get("card_authors", authors))}</text>
 </g></svg>
 '''
         (folder / "preview.svg").write_text(svg)
